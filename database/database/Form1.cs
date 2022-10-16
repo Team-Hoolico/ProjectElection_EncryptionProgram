@@ -34,7 +34,7 @@ namespace database
 
             foreach (string name in NameSurname)
             {
-                int Total = name[0] - 64;   //Gets first letter of the name ('E') converts it into a number (69)(hehe nice :D) and subtracts 64(4)
+                int Total = name[0] - 64;   //Gets first letter of the name ('E') converts it into a number (69)(hehe nice :D) and subtracts 64(5)
                 for (int i = 1; i < NameSurname.Length; i++)
                 {
                     Total += (name[i] - 64) * (i % 2 == 1 ? 1 : -1);
@@ -48,7 +48,9 @@ namespace database
             }
             NameSurnameNumber.Add(TotalNameSurname);
 
-            string[] ClassNo = 
+            string[] ClassID = comboBox1.GetItemText();
+
+
 
 
             UID += (NameSurnameNumber[1] * 1000000) + (NameSurnameNumber[0] * 10000) + (NameSurnameNumber[2] * 100); //final number appears in here
