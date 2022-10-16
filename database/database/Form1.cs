@@ -12,7 +12,7 @@ namespace database
 {
     public partial class Form1 : Form
     {
-        int[] ClassID = new int[] { 12, 18, 14, 21, 16, 24, 45, 36, 50, 40, 55, 44, 60, 48 };
+        int[] ClassID = new int[] { 12, 18, 14, 21, 16, 24, 45, 36, 50, 40, 55, 44, 60, 48};
 
         public Form1()
         {
@@ -30,7 +30,7 @@ namespace database
            string[] NameSurname = textBox1.Text.Replace('i', 'ı').ToUpper().Split(' ');     //"Emine Aydogdu" = "EMINE" , "AYDOGDU"
             long UID = 0;
             int TotalNameSurname =0;
-            List<int> NameSurnameNumber = new List<int> {};
+            List<int> NameSurnameNumber = new List<int> ();
 
             foreach (string name in NameSurname)
             {
@@ -44,16 +44,17 @@ namespace database
                     Total += 99;
                 }
 
+                TotalNameSurname += Total;
                 NameSurnameNumber.Add(Total);//0th member -> NameNumber, 1st member -> SurnameNumber
             }
             NameSurnameNumber.Add(TotalNameSurname);
 
-            string[] ClassID = comboBox1.GetItemText();
+
+            
 
 
 
-
-            UID += (NameSurnameNumber[1] * 1000000) + (NameSurnameNumber[0] * 10000) + (NameSurnameNumber[2] * 100); //final number appears in here
+            UID += (NameSurnameNumber[1] * 1000000) + (NameSurnameNumber[0] * 10000) + (NameSurnameNumber[2] * 100) + (ClassID[comboBox1.SelectedIndex]); //final number appears in here
             label1.Text = $"UID = {UID}";
         }
 
