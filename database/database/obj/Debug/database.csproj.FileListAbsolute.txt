@@ -9,3 +9,14 @@ C:\Users\HP\source\repos\database\database\obj\Debug\database.csproj.GenerateRes
 C:\Users\HP\source\repos\database\database\obj\Debug\database.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\database\database\obj\Debug\database.exe
 C:\Users\HP\source\repos\database\database\obj\Debug\database.pdb
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\bin\Debug\database.exe.config
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\bin\Debug\database.exe
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\bin\Debug\database.pdb
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\obj\Debug\database.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\obj\Debug\database.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\obj\Debug\database.Form1.resources
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\obj\Debug\database.Properties.Resources.resources
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\obj\Debug\database.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\obj\Debug\database.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\obj\Debug\database.exe
+C:\Users\HP\Desktop\ProjectElection_EncryptionProgram\database\database\obj\Debug\database.pdb
