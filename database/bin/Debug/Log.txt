@@ -1,1 +1,8 @@
-[16.10.2022 20:17:00] Generated a key for Dora Gulsenoglu, 45024748
+[18.10.2022 01:47:32] Generated key '16931048' has been registered to database
+[18.10.2022 01:48:31] Generated key '19830348' COULDN'T BE REGISTERED TO DATABASE!. API failed! "23505: duplicate key value violates unique constraint \"votes_pkey\"\r\n\r\nDETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information."
+[18.10.2022 01:48:47] Generated key '838348' COULDN'T BE REGISTERED TO DATABASE!. API failed! "23505: duplicate key value violates unique constraint \"votes_pkey\"\r\n\r\nDETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information."
+[18.10.2022 01:48:51] Generated key '19830348' COULDN'T BE REGISTERED TO DATABASE!. API failed! "23505: duplicate key value violates unique constraint \"votes_pkey\"\r\n\r\nDETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information."
+[18.10.2022 01:48:56] Generated key '16163248' has been registered to database
+[18.10.2022 01:49:23] Generated key '45024748' has been registered to database
+[18.10.2022 01:49:32] Generated key '10182848' has been registered to database
+[18.10.2022 01:49:36] Generated key '10182848' COULDN'T BE REGISTERED TO DATABASE!. API failed! "23505: duplicate key value violates unique constraint \"votes_pkey\"\r\n\r\nDETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information."

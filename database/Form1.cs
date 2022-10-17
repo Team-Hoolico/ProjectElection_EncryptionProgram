@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Net.Http;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace database
 {
@@ -15,11 +18,8 @@ namespace database
     {
         int[] ClassID = new int[] { 12, 18, 14, 21, 16, 24, 45, 36, 50, 40, 55, 44, 60, 48};
 
-        private FileStream logFile;
         public Form1()
         {
-            // We do a little bit of logging :hehe:
-            logFile = File.Open(AppDomain.CurrentDomain.BaseDirectory + "\\Log.txt", FileMode.OpenOrCreate);
             InitializeComponent();
         }
         
@@ -59,15 +59,32 @@ namespace database
             UID += (NameSurnameNumber[1] * 1000000) + (NameSurnameNumber[0] * 10000) + (NameSurnameNumber[2] * 100) + (ClassID[comboBox1.SelectedIndex]); //final number appears in here
 
             //We log newly generated UID's for in case of fraud
-            LogUID(textBox1.Text, UID);
-            label1.Text = $"UID = {UID}";
+            LogUID(UID);
         }
 
-        private void LogUID(string NameSurname,long uid){
-            using (StreamWriter writer = new StreamWriter(logFile)){
-                writer.WriteLine($"[{DateTime.Now.ToString()}] Generated a key for {NameSurname}, {uid}");
+        private async void LogUID(long uid){
+            // Putting UID's in DB after generating is a good way to ensure no one can make random passwords ehehe >:3
+            HttpClient client = new HttpClient();
+            StringContent content = new StringContent(JsonSerializer.Serialize(new{UID = uid}));
+            client.BaseAddress = new Uri("https://localhost:7241/");
+            
+            using (StreamWriter writer = new StreamWriter(@"Log.txt", true)){
+                try{
+                    // Try to register
+                    HttpResponseMessage response = await client.PostAsync($"/RegisterVoter/?UID={uid}", new StringContent("",Encoding.UTF8,"application/json"));
+                    if (!response.IsSuccessStatusCode) {
+                        //Failed :(
+                        throw new Exception($"API failed! {await response.Content.ReadAsStringAsync()}");
+                    }
+                    // Worked!
+                    writer.WriteLine($"[{DateTime.Now}] Generated key '{uid}' has been registered to database");
+                    label1.Text = $"UID = {uid}";
+                }catch(Exception e){
+                    // Might need to shorten the exceptions 
+                    writer.WriteLine($"[{DateTime.Now}] Generated key '{uid}' COULDN'T BE REGISTERED TO DATABASE!. "+e.Message);
+                    label1.Text = $"UID = There has been an error with UID check logs";
+                }
             }
-            //DO API HTTP POST TO REGISTER VOTER
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
